@@ -1,3 +1,6 @@
+
+
+
 #include <iostream>
 
 using namespace std;
@@ -10,6 +13,9 @@ class GameSettings{
     GameSettings():_brightness(200), _height(150), _width(100) {}
 
     public:
+	
+	//Static Method will enable only one copy of the object reside in memory. When we explicitly, call getInstance method, it
+	// will refer to same object, if the object is not held by any other thread.
         static GameSettings* getInstance() {
             if (_instance == NULL) {
                 _instance = new GameSettings();
